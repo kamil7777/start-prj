@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="style.css">
+    <title>Расчет толщины стенки трубопровода</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="grid">
+            <div class="item">
+                <label for="inputDiameter" class="col-form-label">Диаметр наружный, D</label>
+            </div>
+            <div class="item">
+                <input type="text" id="inputDiameter" class="input diameter" placeholder="0" aria-describedby="passwordHelpInline" size="15">
+                <span id="passwordHelpInline" class="form-text"> мм.</span>
+            </div>
+            <div class="item">
+                <label for="inputTemp" class="col-form-label">Расчетная температура</label>
+            </div>
+            <div class="item">
+                <input type="text" id="inputTemp" class="input temp" placeholder="0" aria-describedby="passwordHelpInline" size="15">
+                <span id="passwordHelpInline" class="form-text"> С </span>
+            </div>
+            <div class="item">
+                <label for="inputPassword6" class="col-form-label">Труба</label>
+            </div>
+            <div class="item">
+                <select  aria-label="Default select example" class="pipe">
+                    <option value="Электросварная">Электросварная</option>
+                    <option value="Бесшовная">Бесшовная</option>
+                    <option value="Цветная">Цветная</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="inputCoefficient" class="col-form-label">Коэффициент прочности сварного соединения</label>
+            </div>
+            <div class="item">
+                <input type="text" id="inputCoefficient" class="input coefficient" placeholder="" aria-describedby="passwordHelpInline" size="15">
+            </div>
+            <div class="item">
+                <label for="inputPassword6" class="col-form-label">Технологическое утонение</label>
+            </div>
+            <div class="item">
+                <input type="text" id="inputPassword6" class="input thin" placeholder="0" aria-describedby="passwordHelpInline" size="15">
+                <span id="passwordHelpInline" class="form-text"> мм.</span>
+            </div>
+            <div class="item">
+                <label for="inputPassword6" class="col-form-label">Прибавка на коррозию</label>
+            </div>
+            <div class="item">
+                <input type="text" id="inputPassword6" class="input corrosion" placeholder="0" aria-describedby="passwordHelpInline" size="15">
+                <span id="passwordHelpInline" class="form-text"> мм.</span>
+            </div>
+            <div class="item">
+                <label for="inputPassword6" class="col-form-label">Марка стали</label>
+            </div>
+            <div class="item">
+                <select aria-label="Default select example" class="steel">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="09Г2С">09Г2С</option>
+                </select>
+            </div>
+            <div class="item">
+                <input class="radioBtn press" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="radioBtn-label" for="flexRadioDefault1"> Расчетное давление </label>
+            </div>
+            <div class="item">
+                <input type="text" class="input pressure" aria-label="Username" aria-describedby="addon-wrapping" size="15" data-type ='press'>
+                <span  id="addon-wrapping">МПа</span>
+            </div>
+            <div class="item">
+                <input class="radioBtn thickness" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="radioBtn-label" for="flexRadioDefault2"> Толщина стенки </label>
+            </div>
+            <div class="item">
+                <input type="text" class="input thicknessData" aria-label="Username" aria-describedby="addon-wrapping" size="15" data-type = 'thickness'>
+                <span  id="addon-wrapping">мм</span>
+            </div>
+        </div>
+        <button class="calculation">Расчет</button>
+
+     <!-- <div class="wrp">
+            <div class="wrp">
+                <label for="inputPassword6" class="col-form-label">Диаметр наружный, D</label>
+                <input type="text" id="inputPassword6" class="input" placeholder="0" aria-describedby="passwordHelpInline" size="10">
+                <span id="passwordHelpInline" class="form-text"> мм.</span>
+            </div>
+            
+            <div class="wrp">
+                <label for="inputPassword6" class="col-form-label">Расчетная температура</label>
+                <input type="text" id="inputPassword6" class="" placeholder="0" aria-describedby="passwordHelpInline" size="10">
+                <span id="passwordHelpInline" class="form-text"> С </span>
+            </div>
+
+            <div class="wrp">
+                <label for="inputPassword6" class="col-form-label">Труба</label>
+                <select class="" aria-label="Default select example">
+                    <option value="1">Электросварная</option>
+                    <option value="2">Бесшовная</option>
+                    <option value="3">Цветная</option>
+                </select>
+            </div>
+
+            <div class="wrp">
+                <label for="inputPassword6" class="col-form-label">Коэффициент прочности<br> сварного соединения</label>
+                <input type="text" id="inputPassword6" class="" placeholder="1" aria-describedby="passwordHelpInline" size="10">
+                <span id="passwordHelpInline" class="form-text"> мм.</span>
+            </div>
+
+            <div class="wrp">
+                <label for="inputPassword6" class="col-form-label">Технологическое утонение</label>
+                <input type="text" id="inputPassword6" class="" placeholder="0" aria-describedby="passwordHelpInline" size="10">
+                <span id="passwordHelpInline" class="form-text"> мм.</span>
+            </div>
+
+            <div class="wrp">
+                <label for="inputPassword6" class="col-form-label">Прибавка на коррозию</label>
+                <input type="text" id="inputPassword6" class="" placeholder="0" aria-describedby="passwordHelpInline" size="10">
+                <span id="passwordHelpInline" class="form-text"> мм.</span>
+            </div>
+
+            <div class="wrp">
+                <label for="inputPassword6" class="col-form-label">Марка стали</label>
+                <select class="" aria-label="Default select example" size="1">
+                    <option selected></option>
+                    <option value="1">10</option>
+                    <option value="2">20</option>
+                    <option value="3">09Г2С</option>
+                  </select>
+            </div>
+        </div>
+        <div class="wrp">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Расчетное давление
+            </label>
+            <input type="text" aria-label="Username" aria-describedby="addon-wrapping" size="10">
+            <span  id="addon-wrapping">МПа</span>
+        </div>
+        <div class="wrp">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+                Толщина стенки
+            </label>
+            <input type="text" aria-label="Username" aria-describedby="addon-wrapping" size="10">
+            <span  id="addon-wrapping">мм</span>
+        </div>  -->
+
+    </div>
+    
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

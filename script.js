@@ -13,7 +13,7 @@ const steel = [
     },
 ]
 
-let diameter, temp, coefficient, thin, corrosion, pipe, nameSteel, pressure, strengthSteel;
+let diameter, temp, coefficient, thin, corrosion, pipe, nameSteel, pressure, strengthSteel, thick;
 
 diameter = document.querySelector('.diameter');
 temp = document.querySelector('.temp');
@@ -23,22 +23,20 @@ thin = document.querySelector('.thin');
 corrosion = document.querySelector('.corrosion');
 nameSteel = document.querySelector('.steel');
 pressure = document.querySelector('.pressure');
+thick = document.querySelector('.thicknessData');
 
 function checkRadioBtn() {
     document.querySelector('.grid').addEventListener('click', (event) => {
         if (event.target.classList.contains('radioBtn-label')) {
-            document.querySelectorAll('.radioBtn-label').forEach(item => item.classList.remove('active'));
-            event.target.classList.add('active');
+            if (event.target.getAttribute('for') === 'pressure') {
+                pressure.setAttribute('disabled', 'disabled');
+                thick.removeAttribute('disabled');
+            }
+            else {
+                thick.setAttribute('disabled', 'disabled');
+                pressure.removeAttribute('disabled');
+            }
         }
-        /* document.querySelectorAll('.input').forEach(item => {
-                if (!item.classList.contains('active')) {
-                    item.setAttribute('disabled', 'disabled');
-                }
-               
-
-                
-            }); */
-        
     });
 }
 
@@ -53,7 +51,7 @@ function getCalculation () {
         }
     }
     const thickness = Number(pressure.value) * Number(diameter.value) / (2 * Number(coefficient.value) * strengthSteel + Number(pressure.value)) + Number(corrosion.value) + Number(thin.value);
-    document.querySelector('.thicknessData').value = thickness.toFixed(2);
+    thick.value = thickness.toFixed(2);
 }
 
 document.querySelector('.calculation').addEventListener ('click', getCalculation)

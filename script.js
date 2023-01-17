@@ -42,6 +42,15 @@ function checkRadioBtn() {
 
 checkRadioBtn();
 
+
+function getCalculationPress () {
+    return  (2 * Number(coefficient.value) * strengthSteel*(Number(thick.value) - Number(corrosion.value) - Number(thin.value)) / (Number(diameter.value) - (Number(thick.value) - Number(corrosion.value) - Number(thin.value)))).toFixed(2);
+}
+
+function getCalculationThick () {
+    return (Number(pressure.value) * Number(diameter.value) / (2 * Number(coefficient.value) * strengthSteel + Number(pressure.value)) + Number(corrosion.value) + Number(thin.value)).toFixed(2);
+}
+
 function getCalculation () {
     for (let i = 0; i <steel.length; i++) {
         for (let name in steel[i]) {
@@ -50,8 +59,11 @@ function getCalculation () {
             }
         }
     }
-    const thickness = Number(pressure.value) * Number(diameter.value) / (2 * Number(coefficient.value) * strengthSteel + Number(pressure.value)) + Number(corrosion.value) + Number(thin.value);
-    thick.value = thickness.toFixed(2);
+    if (thick.hasAttribute('disabled')) {
+        thick.value = getCalculationThick();
+    } else {
+        pressure.value = getCalculationPress();
+    }
 }
 
 document.querySelector('.calculation').addEventListener ('click', getCalculation)

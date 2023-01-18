@@ -1,5 +1,6 @@
 body {
     box-sizing: border-box;
+    background-color: rgb(243, 249, 253);
 }
 
 .wrapper {
@@ -27,6 +28,11 @@ body {
     display: flex;
     justify-content: start;
     align-items: center;
+}
+.item-img {
+    width: 240px;
+    height: 270px;
+    background-image: url(./img/img1.png);
 }
 
 label:hover {

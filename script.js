@@ -25,6 +25,20 @@ nameSteel = document.querySelector('.steel');
 pressure = document.querySelector('.pressure');
 thick = document.querySelector('.thicknessData');
 
+const alert = document.querySelectorAll('.alert');
+const btn = document.querySelector('.btn1');
+
+btn.addEventListener('click',() => {
+    alert.forEach(item => item.classList.toggle('active'));
+    
+})
+document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('alert')) {
+        alert.forEach(item => item.classList.toggle('active'));
+    }
+});
+
+
 function checkRadioBtn() {
     document.querySelector('.grid').addEventListener('click', (event) => {
         if (event.target.classList.contains('radioBtn-label')) {

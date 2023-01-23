@@ -28,13 +28,15 @@ thick = document.querySelector('.thicknessData');
 const alert = document.querySelectorAll('.alert');
 const btn = document.querySelector('.btn1');
 
-btn.addEventListener('click',() => {
+function toggleActive() {
     alert.forEach(item => item.classList.toggle('active'));
-    
-})
+}
+
+btn.addEventListener('click', toggleActive)
+
 document.addEventListener('click', (event) => {
-    if (event.target.classList.contains('alert')) {
-        alert.forEach(item => item.classList.toggle('active'));
+    if (event.target.classList.contains('active')) {
+        toggleActive();
     }
 });
 

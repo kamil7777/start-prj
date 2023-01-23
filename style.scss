@@ -1,17 +1,17 @@
 :root {
     --color-dark: #444;
-  --color-light: #ecc026;
+    --color-light: #ecc026;
   /* понадобится для того, чтобы сделать поле квадратным */
-  --di: min(100vh, 100vw);
+    --di: min(100vh, 100vw);
   /* размер поля */
-  --board-di: calc(var(--di) * 0.66666666);
+    --board-di: calc(var(--di) * 0.66666666);
   /* толщина штриховки */
-  --border: calc(var(--board-di) * 0.013333333);
+    --border: calc(var(--board-di) * 0.013333333);
   /* размеры больших и маленьких фигур */
-  --dimension-lg: calc(var(--line) * 14); 
-  --dimension-sm: calc(var(--line) * 7); 
+    --dimension-lg: calc(var(--line) * 14); 
+    --dimension-sm: calc(var(--line) * 7); 
   /* делаем толщину линии равной толщине штриховки */
-  --line: var(--border);
+    --line: var(--border);
 }
 
 body {

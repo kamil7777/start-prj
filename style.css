@@ -134,4 +134,8 @@ input {
 /* дополнительная анимация активной таблички */
 .alert.active div {
   transform: scale(1) translate(-50%, -50%);
+}
+
+.wrp {
+  all: initial;
 }/*# sourceMappingURL=style.css.map */

@@ -25,11 +25,13 @@ nameSteel = document.querySelector('.steel');
 pressure = document.querySelector('.pressure');
 thick = document.querySelector('.thicknessData');
 
-const alert = document.querySelectorAll('.alert');
+const alert = document.querySelector('.alert');
 const btn = document.querySelector('.btn1');
+const buttonModal = document.querySelector('.button-modal')
 
+buttonModal.addEventListener('click', toggleActive); 
 function toggleActive() {
-    alert.forEach(item => item.classList.toggle('active'));
+    alert.classList.toggle('active');
 }
 
 btn.addEventListener('click', toggleActive)

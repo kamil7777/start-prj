@@ -47,7 +47,7 @@ body {
 .item-img {
   width: 240px;
   height: 270px;
-  background-image: url(./img/img1.png);
+  background-image: url(../img/img1.png);
 }
 
 label:hover {
@@ -104,13 +104,13 @@ input {
   pointer-events: none;
 }
 
-.alert div {
+.alert .alertBlock {
   background-color: var(--color);
   border-radius: var(--border);
   box-sizing: border-box;
   color: white;
   cursor: pointer;
-  font-size: calc(var(--board-di) * 0.07);
+  font-size: 15px;
   font-weight: bold;
   left: 74%;
   opacity: 0;
@@ -127,15 +127,25 @@ input {
 }
 
 .alert.active,
-.alert.active div {
+.alert.active .alertBlock {
   opacity: 1;
 }
 
 /* дополнительная анимация активной таблички */
-.alert.active div {
+.alert.active .alertBlock {
   transform: scale(1) translate(-50%, -50%);
 }
 
+.button-modal {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
 .wrp {
-  all: initial;
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=style.css.map */

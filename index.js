@@ -30,9 +30,15 @@ const btn = document.querySelector('.btn1');
 const buttonModal = document.querySelector('.button-modal')
 
 buttonModal.addEventListener('click', toggleActive); 
+
+
+
 function toggleActive() {
     alert.classList.toggle('active');
+    document.querySelector('.tempTake').value = document.querySelector('.tempGive').value;
 }
+
+
 
 btn.addEventListener('click', toggleActive)
 

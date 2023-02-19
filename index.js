@@ -1,3 +1,7 @@
+import getModalWindow from "./module/modalWindow.js";
+
+getModalWindow();
+
 const steel = [
     {
         name: '20',
@@ -29,16 +33,12 @@ const alert = document.querySelector('.alert');
 const btn = document.querySelector('.btn1');
 const buttonModal = document.querySelector('.button-modal')
 
-buttonModal.addEventListener('click', toggleActive); 
-
-
-
 function toggleActive() {
     alert.classList.toggle('active');
     document.querySelector('.tempTake').value = document.querySelector('.tempGive').value;
 }
 
-
+buttonModal.addEventListener('click', toggleActive);
 
 btn.addEventListener('click', toggleActive)
 

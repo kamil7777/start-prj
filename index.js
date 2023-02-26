@@ -35,7 +35,28 @@ const buttonModal = document.querySelector('.button-modal')
 
 function toggleActive() {
     alert.classList.toggle('active');
-    document.querySelector('.tempTake').value = document.querySelector('.tempGive').value;
+    const tempModule = Number(document.querySelector('.tempGive').value);
+    const steelModule = document.querySelector('.pipeBasic').value;
+    const controlModule = document.querySelector(`.weldInspection`);
+    document.querySelector('.tempTake').value = tempModule;
+    document.querySelector('.pipeModule').value = steelModule;
+    if (tempModule <= 510 && steelModule === 'Бесшовная') {
+        controlModule.setAttribute('disabled', 'disabled');
+        document.querySelector('#inputWeldInspection').value = 1;
+        coefficient.value = document.querySelector('#inputWeldInspection').value;
+    }
+    else if (tempModule <= 510 && steelModule === 'Электросварная' && controlModule.value === '100 % контроль шва') {
+        document.querySelector('#inputWeldInspection').value = 1;
+        coefficient.value = document.querySelector('#inputWeldInspection').value;
+    }
+    else if (tempModule <= 510 && steelModule === 'Электросварная'&& controlModule.value === 'контроль шва > 10%') {
+        document.querySelector('#inputWeldInspection').value = 1*0.8;
+        coefficient.value = document.querySelector('#inputWeldInspection').value;
+    }
+    else if (tempModule <= 510 && steelModule === 'Электросварная'&& controlModule.value === 'контроль шва < 10%') {
+        document.querySelector('#inputWeldInspection').value = 1*0.7;
+        coefficient.value = document.querySelector('#inputWeldInspection').value;
+    }
 }
 
 buttonModal.addEventListener('click', toggleActive);
@@ -91,3 +112,6 @@ function getCalculation () {
 }
 
 document.querySelector('.calculation').addEventListener ('click', getCalculation)
+
+
+

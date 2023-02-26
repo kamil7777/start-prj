@@ -20,7 +20,7 @@ export default function getModalWindow () {
                         <label for="inputPassword6" class="col-form-label">Технология изготовления изделия</label>
                     </div>
                     <div class="item">
-                        <select  aria-label="Default select example" class="pipe">
+                        <select  aria-label="Default select example" class="pipe pipeModule" disabled>
                             <option value="Электросварная">Электросварная</option>
                             <option value="Бесшовная">Бесшовная</option>
                         </select>
@@ -29,17 +29,17 @@ export default function getModalWindow () {
                         <label for="inputPassword6" class="col-form-label">Контроль качества шва</label>
                     </div>
                     <div class="item">
-                        <select  aria-label="Default select example" class="pipe">
-                            <option value="weld_inspection_100%">100 % контроль шва</option>
-                            <option value="weld_inspection_more_10">контроль шва &gt; 10%</option>
-                            <option value="weld_inspection_smaller_10">контроль шва &lt; 10%</option>
+                        <select  aria-label="Default select example" class="pipe weldInspection">
+                            <option value="100 % контроль шва">100 % контроль шва</option>
+                            <option value="контроль шва &gt; 10%">контроль шва &gt; 10%</option>
+                            <option value="контроль шва &lt; 10%">контроль шва &lt; 10%</option>
                         </select>
                     </div>
                     <div class="item">
-                        <label for="inputTemp" class="col-form-label">Коэффициент прочности сварного шва</label>
+                        <label for="inputWeldInspection" class="col-form-label">Коэффициент прочности сварного шва</label>
                     </div>
                     <div class="item">
-                        <input type="number" id="inputTemp" class="input" placeholder="0" aria-describedby="passwordHelpInline" disabled>
+                        <input type="number" id="inputWeldInspection" class="input" placeholder="0" aria-describedby="passwordHelpInline" disabled>
                     </div>
                 </div>
 

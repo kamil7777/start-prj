@@ -1,40 +1,37 @@
-:root {
-    --color-dark: #444;
-    --color-light: #c2c2c2;
-    --color-border: #000000;
-    --color-items: #ffbf94;
-  /* понадобится для того, чтобы сделать поле квадратным */
-    --di: min(100vh, 100vw);
-  /* размер поля */
-    --board-di: calc(var(--di) * 0.66666666);
-  /* толщина штриховки */
-    --border: calc(var(--board-di) * 0.013333333);
-  /* размеры больших и маленьких фигур */
-    --dimension-lg: calc(var(--line) * 14); 
-    --dimension-sm: calc(var(--line) * 7); 
-  /* делаем толщину линии равной толщине штриховки */
-    --line: var(--border);
+@import "../../../assets/styles/root";
+@import "../../../assets/styles/colors";
+
+* {
+    font: {
+        family: Roboto;
+        size: 16px;
+        style: normal;
+        weight: 400;
+    }
 }
 
 body {
     box-sizing: border-box;
     background-color: var(--color-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .wrapper {
-    width: 720px;
-    height: 500px;
-    margin: 5% auto;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    max-width: 1045px;
+    //height: 100vh;
+    margin: 0 auto;
 }
 
-.grid {
+
+
+/* .grid {
     display: grid;
     border: 1px solid var(--color-border);
     border-radius: 5px;
-    grid-template-columns: repeat(2, 225px);
+    grid-template-columns: repeat(2, 240px);
     grid-template-rows: repeat(9, 50px);
     font-size: 17px;
     background-color: var(--color-items);
@@ -52,7 +49,7 @@ body {
 .item-img {
     width: 240px;
     height: 270px;
-    background-image: url(../img/img1.png);
+    background-image: url(../../../assets/img/img1.png );
     margin: 10% 0 0 20px;
 }
 
@@ -90,6 +87,9 @@ input {
     background-color: #e4ddd8;
     border-color: aliceblue;
     padding: 0;
-}
+} */
 
-@import "modal"
+
+@import "header";
+@import "main";
+@import "footer";

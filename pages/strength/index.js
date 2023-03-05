@@ -29,12 +29,12 @@ nameSteel = document.querySelector('.steel');
 pressure = document.querySelector('.pressure');
 thick = document.querySelector('.thicknessData');
 
-const alert = document.querySelector('.alert');
+const alertWindow = document.querySelector('.alert');
 const btn = document.querySelector('.btn1');
 const buttonModal = document.querySelector('.button-modal')
 
 function toggleActive() {
-    alert.classList.toggle('active');
+    alertWindow .classList.toggle('active');
     const tempModule = Number(document.querySelector('.tempGive').value);
     const steelModule = document.querySelector('.pipeBasic').value;
     const controlModule = document.querySelector(`.weldInspection`);
@@ -87,6 +87,13 @@ function checkRadioBtn() {
 
 checkRadioBtn();
 
+function checkInputValuePress() {
+    if(!(coefficient.value && thick.value && corrosion.value && thin.value && diameter.value)) alert ('Заполните все поля, пожалуйста!');
+}
+
+function checkInputValueThick() {
+    if(!(coefficient.value && pressure.value && corrosion.value && thin.value && diameter.value)) alert ("Заполните все поля, пожалуйста!");
+}
 
 function getCalculationPress () {
     return  (2 * Number(coefficient.value) * strengthSteel*(Number(thick.value) - Number(corrosion.value) - Number(thin.value)) / (Number(diameter.value) - (Number(thick.value) - Number(corrosion.value) - Number(thin.value)))).toFixed(2);
@@ -105,8 +112,10 @@ function getCalculation () {
         }
     }
     if (thick.hasAttribute('disabled')) {
+        checkInputValueThick()
         thick.value = getCalculationThick();
     } else {
+        checkInputValuePress()
         pressure.value = getCalculationPress();
     }
 }

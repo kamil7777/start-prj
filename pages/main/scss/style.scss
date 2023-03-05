@@ -4,27 +4,41 @@
 * {
     font: {
         family: Roboto;
-        size: 16px;
+        size: 18px;
         style: normal;
         weight: 400;
     }
+    color: $gray_dark;
 }
 
 body {
     box-sizing: border-box;
-    background-color: var(--color-light);
+    background-color: $gray;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+h2 {
+    font: {
+    size: 24px;
+    weight: 500;
+    }
+    
+}
+
 .wrapper {
     display: flex;
     max-width: 1045px;
-    //height: 100vh;
+    height: 100%;
     margin: 0 auto;
 }
 
+.header, .footer {
+    height: 80px;
+    background-color: $gray_dark;
+    color: $white;
+}
 
 
 /* .grid {

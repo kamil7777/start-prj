@@ -1,22 +1,4 @@
 @charset "UTF-8";
-:root {
-  --color-dark: #444;
-  --color-light: #c2c2c2;
-  --color-border: #000000;
-  --color-items: #ffbf94;
-  /* понадобится для того, чтобы сделать поле квадратным */
-  --di: min(100vh, 100vw);
-  /* размер поля */
-  --board-di: calc(var(--di) * 0.66666666);
-  /* толщина штриховки */
-  --border: calc(var(--board-di) * 0.013333333);
-  /* размеры больших и маленьких фигур */
-  --dimension-lg: calc(var(--line) * 14);
-  --dimension-sm: calc(var(--line) * 7);
-  /* делаем толщину линии равной толщине штриховки */
-  --line: var(--border);
-}
-
 /* $color-dark:#000000;
 $black_blue: #333B41;
 $frosted_glass_white: #FDFDFF;
@@ -32,6 +14,20 @@ $pink_gradient: #FEBDAB;
 $red: #D31414;
 $white: #FFFFFF;
 $yellow: #FFEE2E; */
+:root {
+  /* понадобится для того, чтобы сделать поле квадратным */
+  --di: min(100vh, 100vw);
+  /* размер поля */
+  --board-di: calc(var(--di) * 0.66666666);
+  /* толщина штриховки */
+  --border: calc(var(--board-di) * 0.013333333);
+  /* размеры больших и маленьких фигур */
+  --dimension-lg: calc(var(--line) * 14);
+  --dimension-sm: calc(var(--line) * 7);
+  /* делаем толщину линии равной толщине штриховки */
+  --line: var(--border);
+}
+
 * {
   font-family: Roboto;
   font-size: 16px;
@@ -41,7 +37,7 @@ $yellow: #FFEE2E; */
 
 body {
   box-sizing: border-box;
-  background-color: var(--color-light);
+  background-color: #c2c2c2;
 }
 
 .wrapper {
@@ -55,7 +51,7 @@ body {
 
 .grid {
   display: grid;
-  border: 1px solid var(--color-border);
+  border: 1px solid #000000;
   border-radius: 5px;
   grid-template-columns: repeat(2, 240px);
   grid-template-rows: repeat(9, 50px);
@@ -97,7 +93,7 @@ input {
   margin: 10px 0 0 25%;
   background-color: #ffbf94;
   border-radius: 5px;
-  border: 1px solid var(--color-border);
+  border: 1px solid #000000;
 }
 .button:hover {
   cursor: pointer;

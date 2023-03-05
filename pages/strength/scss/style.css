@@ -1,0 +1,181 @@
+@charset "UTF-8";
+:root {
+  --color-dark: #444;
+  --color-light: #c2c2c2;
+  --color-border: #000000;
+  --color-items: #ffbf94;
+  /* понадобится для того, чтобы сделать поле квадратным */
+  --di: min(100vh, 100vw);
+  /* размер поля */
+  --board-di: calc(var(--di) * 0.66666666);
+  /* толщина штриховки */
+  --border: calc(var(--board-di) * 0.013333333);
+  /* размеры больших и маленьких фигур */
+  --dimension-lg: calc(var(--line) * 14);
+  --dimension-sm: calc(var(--line) * 7);
+  /* делаем толщину линии равной толщине штриховки */
+  --line: var(--border);
+}
+
+/* $color-dark:#000000;
+$black_blue: #333B41;
+$frosted_glass_white: #FDFDFF;
+$gray_dark: #72828E;
+$gray: #767474;
+$gray_light: #F1F3F2;
+$gray_smoky: #ABABAB;
+$green: #4B9200;
+$orange: #F9804B;
+$orange_dark: #E47209;
+$orange_grad: #FED290;
+$pink_gradient: #FEBDAB;
+$red: #D31414;
+$white: #FFFFFF;
+$yellow: #FFEE2E; */
+* {
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--color-light);
+}
+
+.wrapper {
+  width: 745px;
+  height: 500px;
+  margin: 5% auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  grid-template-columns: repeat(2, 240px);
+  grid-template-rows: repeat(9, 50px);
+  font-size: 17px;
+  background-color: #ffbf94;
+}
+
+.item {
+  background-color: #ffbf94;
+  padding: 7px;
+  margin: 1px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.item-img {
+  width: 240px;
+  height: 270px;
+  background-image: url(../../../assets/img/img1.png);
+  margin: 10% 0 0 20px;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+.select-item {
+  width: 150px;
+}
+
+input {
+  margin-right: 5px;
+}
+
+.button {
+  width: 100px;
+  height: 50px;
+  margin: 10px 0 0 25%;
+  background-color: #ffbf94;
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+}
+.button:hover {
+  cursor: pointer;
+}
+.button:active {
+  scale: 0.95;
+}
+
+.btn1 {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  background-color: #e4ddd8;
+  border-color: aliceblue;
+  padding: 0;
+}
+
+.alert {
+  --color: var(--color-dark);
+  /* остальной фон делаем полупрозрачным белым */
+  background-color: rgba(255, 255, 255, 0.8);
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  /* настраиваем плавное появление */
+  transition: opacity 250ms ease-in-out;
+}
+
+.alert:not(.active) {
+  /* то табличка не будет реагировать на нажатия мыши*/
+  pointer-events: none;
+}
+
+.alert .alertBlock {
+  background-color: var(--color);
+  border-radius: var(--border);
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  left: 74%;
+  opacity: 0;
+  padding: calc(var(--border) * 2);
+  position: absolute;
+  text-align: center;
+  top: 30%;
+  /* анимация появления */
+  transform: scale(0.00001) translate(-50%, -50%);
+  transform-origin: 0 0;
+  transition: all 250ms ease-in-out;
+  width: calc(var(--board-di) * 0.75);
+  height: 50vh;
+}
+
+.alert.active,
+.alert.active .alertBlock {
+  opacity: 1;
+}
+
+/* дополнительная анимация активной таблички */
+.alert.active .alertBlock {
+  transform: scale(1) translate(-50%, -50%);
+}
+
+.button-modal {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.wrp {
+  display: flex;
+  justify-content: space-between;
+}/*# sourceMappingURL=style.css.map */

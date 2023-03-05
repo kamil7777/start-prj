@@ -1,0 +1,64 @@
+.alert {
+    --color: var(--color-dark);
+    /* остальной фон делаем полупрозрачным белым */
+    background-color: rgba(255, 255, 255, 0.8);
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    /* настраиваем плавное появление */
+    transition: opacity 250ms ease-in-out;
+}
+
+ .alert:not(.active) {
+    /* то табличка не будет реагировать на нажатия мыши*/
+    pointer-events: none;
+  } 
+  .alert .alertBlock {
+    background-color: var(--color);
+    border-radius: var(--border);
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    left: 74%;
+    opacity: 0;
+    padding: calc(var(--border) * 2);
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    /* анимация появления */
+    transform: scale(0.00001) translate(-50%, -50%);
+    transform-origin: 0 0;
+    transition: all 250ms ease-in-out;
+    width: calc(var(--board-di) * 0.75);
+    height: 50vh;
+    
+  }
+  
+  .alert.active,
+  .alert.active .alertBlock {
+    opacity: 1;
+  }
+  /* дополнительная анимация активной таблички */
+  .alert.active .alertBlock {
+    transform: scale(1) translate(-50%, -50%);
+  }
+
+  .button-modal {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin: 0;
+  }
+
+  .wrp {
+    display: flex;
+    justify-content: space-between;
+    
+  }

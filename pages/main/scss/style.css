@@ -1,9 +1,5 @@
 @charset "UTF-8";
 :root {
-  --color-dark: #444;
-  --color-light: #c2c2c2;
-  --color-border: #000000;
-  --color-items: #ffbf94;
   /* понадобится для того, чтобы сделать поле квадратным */
   --di: min(100vh, 100vw);
   /* размер поля */
@@ -34,23 +30,36 @@ $white: #FFFFFF;
 $yellow: #FFEE2E; */
 * {
   font-family: Roboto;
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
+  color: #444;
 }
 
 body {
   box-sizing: border-box;
-  background-color: var(--color-light);
+  background-color: #c2c2c2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
 .wrapper {
   display: flex;
   max-width: 1045px;
+  height: 100%;
   margin: 0 auto;
+}
+
+.header, .footer {
+  height: 80px;
+  background-color: #444;
+  color: #FFFFFF;
 }
 
 /* .grid {
@@ -114,12 +123,6 @@ input {
     border-color: aliceblue;
     padding: 0;
 } */
-.header {
-  height: 80px;
-  background-color: #444;
-  color: #FFFFFF;
-}
-
 .head {
   display: flex;
   justify-content: space-around;
@@ -173,10 +176,6 @@ input {
   color: #ffbf94;
 }
 
-.main {
-  height: 500px;
-}
-
 .main-section {
   flex-direction: column;
   align-items: center;
@@ -188,9 +187,30 @@ input {
 }
 
 .calculation {
-  height: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
-.footer {
+.title-calc {
+  margin: 20px auto;
+}
+
+.nav-ul-calc {
+  display: block;
+  list-style: circle;
+}
+
+.nav-ul-li-calc {
+  color: #444;
+  -webkit-text-decoration: dotted;
+          text-decoration: dotted;
+}
+
+.nav-ul-li-calc:hover {
+  transition: all 0.4s;
+  color: #4B9200;
+}
+
+.footer-section {
   height: 80px;
 }/*# sourceMappingURL=style.css.map */

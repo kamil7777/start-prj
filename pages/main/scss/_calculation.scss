@@ -1,3 +1,23 @@
 .calculation {
-    height: 300px;
+    display: flex;
+    flex-direction: column;
+} 
+
+.title-calc {
+    margin: 20px auto;
+}
+
+.nav-ul-calc {
+    display: block;
+    list-style: circle;
+}
+
+.nav-ul-li-calc {
+    color: $gray_dark;
+    text-decoration: dotted;
+}
+
+.nav-ul-li-calc:hover {
+    transition: all 0.4s;
+    color: $green;
 }

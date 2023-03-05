@@ -1,9 +1,5 @@
 
-.header {
-    height: 80px;
-    background-color: $color-dark;
-    color: $white;
-}
+
 
 .head {
     display: flex;
@@ -42,6 +38,7 @@
 .nav-ul-li_list:hover,
 .logo:hover {
     cursor: pointer;
+    
 }
 
 .nav-ul-li_list {

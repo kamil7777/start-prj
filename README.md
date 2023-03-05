@@ -1,2 +1,2 @@
 # start-prj
-https://kamil7777.github.io/pages/main/
+#https://kamil7777.github.io/start-prj/pages/main/

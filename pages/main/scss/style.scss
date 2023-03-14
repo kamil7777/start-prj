@@ -9,15 +9,19 @@
         weight: 400;
     }
     color: $gray_dark;
+    box-sizing: border-box;
 }
 
 body {
-    box-sizing: border-box;
     background-color: $gray;
+}
+
+.container  {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
+    height: 100vh;
+} 
 
 h2 {
     font: {
@@ -28,9 +32,7 @@ h2 {
 }
 
 .wrapper {
-    display: flex;
     max-width: 1045px;
-    height: 100%;
     margin: 0 auto;
 }
 

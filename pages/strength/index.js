@@ -6,6 +6,7 @@ const steel = [
     {
         name: '20',
         strength: '430',
+        
     },
     {
         name: '10',

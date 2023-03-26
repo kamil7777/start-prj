@@ -8,7 +8,10 @@
 }
 
 .nav-ul-calc {
-    display: block;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     list-style: circle;
 }
 
@@ -20,4 +23,5 @@
 .nav-ul-li-calc:hover {
     transition: all 0.4s;
     color: $green;
+    transform: scale(1.2);
 }

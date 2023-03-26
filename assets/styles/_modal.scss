@@ -1,5 +1,5 @@
 .alert {
-    --color: var(--color-dark);
+    color: $black;
     /* остальной фон делаем полупрозрачным белым */
     background-color: rgba(255, 255, 255, 0.8);
     bottom: 0;
@@ -17,10 +17,10 @@
     pointer-events: none;
   } 
   .alert .alertBlock {
-    background-color: var(--color);
-    border-radius: var(--border);
+    background-color: $gray;
+    border-radius: 10px;
     box-sizing: border-box;
-    color: white;
+    color: $gray_dark;
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;

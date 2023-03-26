@@ -112,7 +112,7 @@ input {
 }
 
 .alert {
-  --color: var(--color-dark);
+  color: #000000;
   /* остальной фон делаем полупрозрачным белым */
   background-color: rgba(255, 255, 255, 0.8);
   bottom: 0;
@@ -131,10 +131,10 @@ input {
 }
 
 .alert .alertBlock {
-  background-color: var(--color);
-  border-radius: var(--border);
+  background-color: #c2c2c2;
+  border-radius: 10px;
   box-sizing: border-box;
-  color: white;
+  color: #444;
   cursor: pointer;
   font-size: 15px;
   font-weight: bold;

@@ -87,12 +87,17 @@ function checkRadioBtn() {
 }
 
 checkRadioBtn();
+function getReplaceComma() {
+    Array.from(document.querySelectorAll('.input')).map(item => item.value = item.value.replace(/,/g,'.'));
+}
 
 function checkInputValuePress() {
+    getReplaceComma()
     if(!(coefficient.value && thick.value && corrosion.value && thin.value && diameter.value)) alert ('Заполните все поля, пожалуйста!');
 }
 
 function checkInputValueThick() {
+    getReplaceComma()
     if(!(coefficient.value && pressure.value && corrosion.value && thin.value && diameter.value)) alert ("Заполните все поля, пожалуйста!");
 }
 

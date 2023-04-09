@@ -84,20 +84,15 @@ function checkRadioBtn() {
             }
         }
     });
-}
+} 
 
 checkRadioBtn();
-function getReplaceComma() {
-    Array.from(document.querySelectorAll('.input')).map(item => item.value = item.value.replace(/,/g,'.'));
-}
 
 function checkInputValuePress() {
-    getReplaceComma()
     if(!(coefficient.value && thick.value && corrosion.value && thin.value && diameter.value)) alert ('Заполните все поля, пожалуйста!');
 }
 
 function checkInputValueThick() {
-    getReplaceComma()
     if(!(coefficient.value && pressure.value && corrosion.value && thin.value && diameter.value)) alert ("Заполните все поля, пожалуйста!");
 }
 
@@ -106,7 +101,8 @@ function getCalculationPress () {
 }
 
 function getCalculationThick () {
-    return (Number(pressure.value) * Number(diameter.value) / (2 * Number(coefficient.value) * strengthSteel + Number(pressure.value)) + Number(corrosion.value) + Number(thin.value)).toFixed(2);
+    
+    return (Number(pressure.value.replace(/,/g,'.')) * Number(diameter.value) / (2 * Number(coefficient.value) * strengthSteel + Number(pressure.value.replace(/,/g,'.'))) + Number(corrosion.value) + Number(thin.value)).toFixed(2);
 }
 
 function getCalculation () {
@@ -130,3 +126,4 @@ document.querySelector('.calculation').addEventListener ('click', getCalculation
 
 
 
+//function getCalculationThick() {

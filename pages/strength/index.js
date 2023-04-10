@@ -87,8 +87,9 @@ function checkRadioBtn() {
 }
 
 checkRadioBtn();
+
 function getReplaceComma() {
-    Array.from(document.querySelectorAll('.input')).map(item => item.value = item.value.replace(/,/g,'.'));
+    document.querySelectorAll('.input').forEach(item => item.value = item.value.replace(/,/g,'.'));
 }
 
 function checkInputValuePress() {

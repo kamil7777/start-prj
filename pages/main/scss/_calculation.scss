@@ -1,0 +1,27 @@
+.calculation {
+    display: flex;
+    flex-direction: column;
+} 
+
+.title-calc {
+    margin: 20px auto;
+}
+
+.nav-ul-calc {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: circle;
+}
+
+.nav-ul-li-calc {
+    color: $gray_dark;
+    text-decoration: dotted;
+}
+
+.nav-ul-li-calc:hover {
+    transition: all 0.4s;
+    color: $green;
+    transform: scale(1.2);
+}

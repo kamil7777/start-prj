@@ -1,0 +1,47 @@
+@import "../../../assets/styles/root";
+@import "../../../assets/styles/colors";
+
+* {
+    font: {
+        family: Roboto;
+        size: 18px;
+        style: normal;
+        weight: 400;
+    }
+    color: $gray_dark;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $blue;
+}
+
+.container  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+} 
+
+h2 {
+    font: {
+    size: 24px;
+    weight: 500;
+    }
+    
+}
+
+.wrapper {
+    max-width: 1045px;
+    margin: 0 auto;
+}
+
+.header, .footer {
+    height: 80px;
+    background-color: $gray_dark;
+    color: $white;
+}
+
+@import "header";
+@import "main";
+@import "footer";

@@ -57,3 +57,68 @@
 .nav-ul-li_list:active {
     color: $orange;
 }
+
+.hamburger {
+    display: none;
+}
+
+
+
+
+@media screen and (max-width: 840px) {
+    /* burger menu */
+    
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: #292929;
+        width: 320px;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 30px;
+        transition: 0.4s ease-in-out;
+        z-index: 9;
+        overflow: auto;
+    }
+    .nav.open {
+        right: 0;
+        transition: 0.4s ease-in-out;
+    }
+    .nav-ul {
+        margin-top: 248px;
+        width: 320px;
+        height: 327px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-ul-li {
+        margin-right: 0;
+    }
+    .nav-ul-li_list {
+        font-size: 32px;
+        color: #FAFAFA;
+        margin-right: 0;
+    }
+    .hamburger {
+        display: block;
+        width: 30px;
+        height: 22px;
+        //margin-left: 43px;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+        z-index: 10;
+        margin-top: 20px;
+    }
+    .line {
+        width: 100%;
+        height: 2px;
+        background-color: $gray;
+        margin: 0 0 8px 0;
+    }
+    .hamburger.open {
+        transform: rotate(90deg);
+    }
+}
